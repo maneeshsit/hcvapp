@@ -63,6 +63,30 @@ export const VehicleGrid = () => {
   return (
     <div className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
+        <nav className="mb-8">
+          <ul className="flex space-x-8 justify-center text-lg font-medium">
+            <li>
+              <a href="/" className="text-orange-600 hover:text-orange-700 transition-colors">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#vehicles" className="text-orange-600 hover:text-orange-700 transition-colors">
+                Vehicles
+              </a>
+            </li>
+            <li>
+              <a href="#insurance" className="text-orange-600 hover:text-orange-700 transition-colors">
+                Insurance
+              </a>
+            </li>
+            <li>
+              <a href="#contract" className="text-orange-600 hover:text-orange-700 transition-colors">
+                Contract
+              </a>
+            </li>
+          </ul>
+        </nav>
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Heavy Equipment Rentals</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">

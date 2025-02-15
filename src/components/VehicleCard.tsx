@@ -1,9 +1,11 @@
 
-import { Calendar, MapPin, AlertCircle } from "lucide-react";
+import { Calendar, MapPin, AlertCircle, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { useState } from "react";
 
 interface VehicleCardProps {
   title: string;
@@ -67,12 +69,59 @@ export const VehicleCard = ({
           ${price}
           <span className="text-sm font-normal text-muted-foreground">/day</span>
         </div>
-        <Button 
-          variant="secondary"
-          className="bg-orange-100 hover:bg-orange-200 text-orange-700"
-        >
-          View Details
-        </Button>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button 
+              variant="secondary"
+              className="bg-orange-100 hover:bg-orange-200 text-orange-700"
+            >
+              View Details
+            </Button>
+          </SheetTrigger>
+          <SheetContent className="w-[90%] sm:w-[540px]">
+            <SheetHeader className="mb-6">
+              <SheetTitle className="text-2xl">{title}</SheetTitle>
+            </SheetHeader>
+            <div className="space-y-6">
+              <div className="aspect-video relative overflow-hidden rounded-lg">
+                <img
+                  src={image}
+                  alt={title}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <Badge className="text-base px-3 py-1">{type}</Badge>
+                  <span className="text-2xl font-bold text-orange-600">
+                    ${price}<span className="text-sm font-normal text-muted-foreground">/day</span>
+                  </span>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center text-base">
+                    <MapPin className="h-5 w-5 mr-2 text-orange-500" />
+                    {location}
+                  </div>
+                  <div className="flex items-center text-base">
+                    <Calendar className="h-5 w-5 mr-2 text-orange-500" />
+                    <span className={cn(
+                      isAvailableNow ? "text-green-600 font-medium" : ""
+                    )}>
+                      {availability}
+                    </span>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h4 className="font-semibold">Description</h4>
+                  <p className="text-muted-foreground">
+                    Professional-grade {type.toLowerCase()} available for rent. This equipment comes with 
+                    full maintenance support and insurance options. Perfect for construction and industrial projects.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </SheetContent>
+        </Sheet>
       </CardFooter>
     </Card>
   );
