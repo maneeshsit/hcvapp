@@ -37,7 +37,7 @@ const VEHICLES = [
     location: "Reno, NV",
     price: 449,
     availability: "Tomorrow",
-    image: "/placeholder.svg",
+    image: "/placeholder.svg",  // Using placeholder for now
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const VEHICLES = [
     location: "Tuscon, AZ",
     price: 1299,
     availability: "Next Week",
-    image: "/placeholder.svg",
+    image: "/placeholder.svg",  // Using placeholder for now
   },
   {
     id: 6,
@@ -55,7 +55,7 @@ const VEHICLES = [
     location: "Las Vegas, NV",
     price: 199,
     availability: "Available Now",
-    image: "/placeholder.svg",
+    image: "/placeholder.svg",  // Using placeholder for now
   }
 ];
 
