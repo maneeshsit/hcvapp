@@ -10,7 +10,7 @@ const VEHICLES = [
     location: "Denver, CO",
     price: 899,
     availability: "Available Now",
-    image: "/placeholder.svg",
+    image: "/src/components/cat1.png",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const VEHICLES = [
     location: "Phoenix, AZ",
     price: 699,
     availability: "Next Week",
-    image: "/placeholder.svg",
+    image: "/src/components/jcb1.png",
   },
   {
     id: 3,
