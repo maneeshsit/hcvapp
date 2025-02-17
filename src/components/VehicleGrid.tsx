@@ -46,7 +46,7 @@ const VEHICLES = [
     location: "Tuscon, AZ",
     price: 1299,
     availability: "Next Week",
-    image: "/sandwik.png",
+    image: "/sandvik.png",
   },
   {
     id: 6,
