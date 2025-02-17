@@ -37,7 +37,7 @@ const VEHICLES = [
     location: "Reno, NV",
     price: 449,
     availability: "Tomorrow",
-    image: "/oip1.png",
+    image: "/atlascopco.png",
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const VEHICLES = [
     location: "Tuscon, AZ",
     price: 1299,
     availability: "Next Week",
-    image: "/sandwick.png",
+    image: "/sandwik.png",
   },
   {
     id: 6,
