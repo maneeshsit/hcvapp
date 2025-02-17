@@ -6,7 +6,7 @@ import { Construction, Hammer, Forklift, Zap, Drill } from "lucide-react";
 import cat1 from "../../cat1.png";
 import jcb1 from "../../jcb1.png";
 import oip from "../../OIP.png";
-import oip1 from "../../oip1.png";
+import oip1 from "../../OIP1.png"; // Fixed case sensitivity
 import sandwick from "../../sandwick.png";
 import bandsaw from "../../bandsaw.png";
 
