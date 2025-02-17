@@ -2,6 +2,14 @@
 import { VehicleCard } from "./VehicleCard";
 import { Construction, Hammer, Forklift, Zap, Drill } from "lucide-react";
 
+// Import all images
+import cat1 from "../assets/cat1.png";
+import jcb1 from "../assets/jcb1.png";
+import oip from "../assets/OIP.png";
+import oip1 from "../assets/oip1.png";
+import sandwick from "../assets/sandwick.png";
+import bandsaw from "../assets/bandsaw.png";
+
 const VEHICLES = [
   {
     id: 1,
@@ -10,7 +18,7 @@ const VEHICLES = [
     location: "Denver, CO",
     price: 899,
     availability: "Available Now",
-    image: "cat1.png",
+    image: cat1,
   },
   {
     id: 2,
@@ -19,7 +27,7 @@ const VEHICLES = [
     location: "Phoenix, AZ",
     price: 699,
     availability: "Next Week",
-    image: "jcb1.png",
+    image: jcb1,
   },
   {
     id: 3,
@@ -28,7 +36,7 @@ const VEHICLES = [
     location: "Salt Lake City, UT",
     price: 299,
     availability: "Available Now",
-    image: "OIP.png",
+    image: oip,
   },
   {
     id: 4,
@@ -37,7 +45,7 @@ const VEHICLES = [
     location: "Reno, NV",
     price: 449,
     availability: "Tomorrow",
-    image: "oip1.png",
+    image: oip1,
   },
   {
     id: 5,
@@ -46,7 +54,7 @@ const VEHICLES = [
     location: "Tuscon, AZ",
     price: 1299,
     availability: "Next Week",
-    image: "sandwick.png",
+    image: sandwick,
   },
   {
     id: 6,
@@ -55,7 +63,7 @@ const VEHICLES = [
     location: "Las Vegas, NV",
     price: 199,
     availability: "Available Now",
-    image: "bandsaw.png",
+    image: bandsaw,
   }
 ];
 
