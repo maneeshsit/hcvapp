@@ -10,7 +10,7 @@ const VEHICLES = [
     location: "Denver, CO",
     price: 899,
     availability: "Available Now",
-    image: "cat1.png",
+    image: "/cat1.png",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const VEHICLES = [
     location: "Phoenix, AZ",
     price: 699,
     availability: "Next Week",
-    image: "jcb1.png",
+    image: "/jcb1.png",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const VEHICLES = [
     location: "Salt Lake City, UT",
     price: 299,
     availability: "Available Now",
-    image: "OIP.png",
+    image: "/OIP.png",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const VEHICLES = [
     location: "Reno, NV",
     price: 449,
     availability: "Tomorrow",
-    image: "oip1.png",
+    image: "/oip1.png",
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const VEHICLES = [
     location: "Tuscon, AZ",
     price: 1299,
     availability: "Next Week",
-    image: "sandwick.png",
+    image: "/sandwick.png",
   },
   {
     id: 6,
@@ -55,7 +55,7 @@ const VEHICLES = [
     location: "Las Vegas, NV",
     price: 199,
     availability: "Available Now",
-    image: "bandsaw.png",
+    image: "/bandsaw.png",
   }
 ];
 
