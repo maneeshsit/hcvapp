@@ -3,12 +3,12 @@ import { VehicleCard } from "./VehicleCard";
 import { Construction, Hammer, Forklift, Zap, Drill } from "lucide-react";
 
 // Import all images
-import cat1 from "../assets/cat1.png";
-import jcb1 from "../assets/jcb1.png";
-import oip from "../assets/OIP.png";
-import oip1 from "../assets/oip1.png";
-import sandwick from "../assets/sandwick.png";
-import bandsaw from "../assets/bandsaw.png";
+import cat1 from "../../cat1.png";
+import jcb1 from "../../jcb1.png";
+import oip from "../../OIP.png";
+import oip1 from "../../oip1.png";
+import sandwick from "../../sandwick.png";
+import bandsaw from "../../bandsaw.png";
 
 const VEHICLES = [
   {
