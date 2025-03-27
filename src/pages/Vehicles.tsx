@@ -1,6 +1,5 @@
 
-import { VehicleCard } from "./VehicleCard";
-import { Construction, Hammer, Forklift, Zap, Drill } from "lucide-react";
+import { VehicleCard } from "@/components/VehicleCard";
 import { Link } from "react-router-dom";
 
 const VEHICLES = [
@@ -60,9 +59,9 @@ const VEHICLES = [
   }
 ];
 
-export const VehicleGrid = () => {
+const Vehicles = () => {
   return (
-    <div className="py-12 bg-gray-50">
+    <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
         <nav className="mb-8">
           <ul className="flex space-x-8 justify-center text-lg font-medium">
@@ -72,7 +71,7 @@ export const VehicleGrid = () => {
               </Link>
             </li>
             <li>
-              <Link to="/vehicles" className="text-orange-600 hover:text-orange-700 transition-colors">
+              <Link to="/vehicles" className="text-orange-600 hover:text-orange-700 font-bold border-b-2 border-orange-600 transition-colors">
                 Vehicles
               </Link>
             </li>
@@ -88,13 +87,29 @@ export const VehicleGrid = () => {
             </li>
           </ul>
         </nav>
+        
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Heavy Equipment Rentals</h2>
+          <h1 className="text-4xl font-bold mb-4">Our Vehicle Fleet</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Professional-grade construction and mining equipment available for registered users.
-            Browse our selection of heavy machinery and industrial tools.
+            Browse our extensive collection of high-quality commercial and industrial vehicles available for rent.
+            All equipment is regularly serviced and maintained to the highest standards.
           </p>
         </div>
+        
+        <div className="mb-12">
+          <div className="bg-orange-50 p-6 rounded-lg shadow-sm">
+            <h2 className="text-2xl font-bold mb-4">Vehicle Rental Benefits</h2>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>No long-term commitment required</li>
+              <li>24/7 technical support</li>
+              <li>Flexible rental periods from 1 day to 12 months</li>
+              <li>Optional operator training available</li>
+              <li>Delivery and pickup service to your worksite</li>
+              <li>Comprehensive insurance options</li>
+            </ul>
+          </div>
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {VEHICLES.map((vehicle) => (
             <VehicleCard key={vehicle.id} {...vehicle} />
@@ -104,3 +119,5 @@ export const VehicleGrid = () => {
     </div>
   );
 };
+
+export default Vehicles;
