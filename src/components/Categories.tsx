@@ -1,6 +1,7 @@
 
 import { Construction, Hammer, Forklift, Zap, Drill } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const CATEGORIES = [
   {
@@ -8,30 +9,35 @@ const CATEGORIES = [
     icon: Construction,
     count: 45,
     color: "bg-orange-100 text-orange-600",
+    link: "/category/bulldozers"
   },
   {
     title: "Backhoes",
     icon: Hammer,
     count: 32,
     color: "bg-blue-100 text-blue-600",
+    link: "/category/backhoes"
   },
   {
     title: "Forklifts",
     icon: Forklift,
     count: 28,
     color: "bg-green-100 text-green-600",
+    link: "/category/forklifts"
   },
   {
     title: "Generators",
     icon: Zap,
     count: 24,
     color: "bg-purple-100 text-purple-600",
+    link: "/category/generators"
   },
   {
     title: "Drill Rigs",
     icon: Drill,
     count: 18,
     color: "bg-red-100 text-red-600",
+    link: "/category/drillrigs"
   },
 ];
 
@@ -45,15 +51,17 @@ export const Categories = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {CATEGORIES.map((category) => (
-            <Card key={category.title} className="hover-card cursor-pointer border-none shadow-lg rounded-xl overflow-hidden">
-              <CardContent className="p-6 flex flex-col items-center text-center">
-                <div className={`p-4 rounded-full mb-4 ${category.color}`}>
-                  <category.icon className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{category.title}</h3>
-                <p className="text-muted-foreground">{category.count} units</p>
-              </CardContent>
-            </Card>
+            <Link to={category.link} key={category.title}>
+              <Card className="hover-card cursor-pointer border-none shadow-lg rounded-xl overflow-hidden h-full transition-all duration-300">
+                <CardContent className="p-6 flex flex-col items-center text-center h-full">
+                  <div className={`p-4 rounded-full mb-4 ${category.color}`}>
+                    <category.icon className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{category.title}</h3>
+                  <p className="text-muted-foreground">{category.count} units</p>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
