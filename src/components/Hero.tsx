@@ -18,10 +18,10 @@ export const Hero = () => {
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center mb-8 animate-fade-up">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-            Find Your Perfect Commercial Vehicle
+            Find Your Perfect Commercial Equipment
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-8">
-            Rent or share heavy commercial vehicles with ease
+            Rent or share heavy commercial equipment with ease
           </p>
         </div>
         
@@ -44,7 +44,7 @@ export const Hero = () => {
               </div>
               <Button className="w-full bg-primary hover:bg-primary/90">
                 <Search className="mr-2 h-5 w-5" />
-                Search Vehicles
+                Search Equipment
               </Button>
             </div>
           </div>

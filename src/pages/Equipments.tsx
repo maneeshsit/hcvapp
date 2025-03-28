@@ -59,7 +59,7 @@ const VEHICLES = [
   }
 ];
 
-const Vehicles = () => {
+const Equipments = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
@@ -71,8 +71,8 @@ const Vehicles = () => {
               </Link>
             </li>
             <li>
-              <Link to="/vehicles" className="text-orange-600 hover:text-orange-700 font-bold border-b-2 border-orange-600 transition-colors">
-                Vehicles
+              <Link to="/equipments" className="text-orange-600 hover:text-orange-700 font-bold border-b-2 border-orange-600 transition-colors">
+                Equipments
               </Link>
             </li>
             <li>
@@ -89,16 +89,16 @@ const Vehicles = () => {
         </nav>
         
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Our Vehicle Fleet</h1>
+          <h1 className="text-4xl font-bold mb-4">Our Equipment Fleet</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Browse our extensive collection of high-quality commercial and industrial vehicles available for rent.
+            Browse our extensive collection of high-quality commercial and industrial equipment available for rent.
             All equipment is regularly serviced and maintained to the highest standards.
           </p>
         </div>
         
         <div className="mb-12">
           <div className="bg-orange-50 p-6 rounded-lg shadow-sm">
-            <h2 className="text-2xl font-bold mb-4">Vehicle Rental Benefits</h2>
+            <h2 className="text-2xl font-bold mb-4">Equipment Rental Benefits</h2>
             <ul className="list-disc pl-6 space-y-2">
               <li>No long-term commitment required</li>
               <li>24/7 technical support</li>
@@ -120,4 +120,4 @@ const Vehicles = () => {
   );
 };
 
-export default Vehicles;
+export default Equipments;

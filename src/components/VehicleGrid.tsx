@@ -72,8 +72,8 @@ export const VehicleGrid = () => {
               </Link>
             </li>
             <li>
-              <Link to="/vehicles" className="text-orange-600 hover:text-orange-700 transition-colors">
-                Vehicles
+              <Link to="/equipments" className="text-orange-600 hover:text-orange-700 transition-colors">
+                Equipments
               </Link>
             </li>
             <li>
