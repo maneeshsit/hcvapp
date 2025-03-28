@@ -7,9 +7,16 @@ interface ContractInfo {
   date: string;
 }
 
+// Create an augmented interface to handle lastAutoTable property
+interface jsPDFWithAutoTable extends jsPDF {
+  lastAutoTable?: {
+    finalY: number;
+  };
+}
+
 export const generateContractPDF = (contractInfo: ContractInfo): jsPDF => {
   const { type, date } = contractInfo;
-  const doc = new jsPDF();
+  const doc = new jsPDF() as jsPDFWithAutoTable;
   
   // Add header
   doc.setFontSize(22);
@@ -46,11 +53,14 @@ export const generateContractPDF = (contractInfo: ContractInfo): jsPDF => {
   
   // Terms and conditions
   doc.setFontSize(14);
-  doc.text('Terms and Conditions', 20, doc.lastAutoTable.finalY + 20);
+  
+  // Use optional chaining to safely access the finalY property
+  const finalY = doc.lastAutoTable?.finalY || 100;
+  doc.text('Terms and Conditions', 20, finalY + 20);
   
   // Add terms based on contract type
   const terms = getContractTerms(type);
-  let yPos = doc.lastAutoTable.finalY + 30;
+  let yPos = (doc.lastAutoTable?.finalY || 100) + 30;
   
   terms.forEach((term, index) => {
     doc.setFontSize(10);
