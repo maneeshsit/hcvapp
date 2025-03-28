@@ -37,12 +37,15 @@ const CATEGORIES = [
 
 export const Categories = () => {
   return (
-    <div className="py-12 bg-gray-50">
+    <div className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">Browse Equipment</h2>
+        <h2 className="text-3xl font-bold mb-3 text-center">Browse Equipment</h2>
+        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+          Find the perfect equipment for your next project from our extensive catalog
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {CATEGORIES.map((category) => (
-            <Card key={category.title} className="hover-card cursor-pointer">
+            <Card key={category.title} className="hover-card cursor-pointer border-none shadow-lg rounded-xl overflow-hidden">
               <CardContent className="p-6 flex flex-col items-center text-center">
                 <div className={`p-4 rounded-full mb-4 ${category.color}`}>
                   <category.icon className="h-8 w-8" />

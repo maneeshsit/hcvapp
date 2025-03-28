@@ -26,9 +26,9 @@ export const VehicleCard = ({
   const isAvailableNow = availability === "Available Now";
 
   return (
-    <Card className="overflow-hidden hover-card border-2">
+    <Card className="overflow-hidden hover-card border-none shadow-lg rounded-xl">
       <CardHeader className="p-0">
-        <div className="relative h-48 overflow-hidden bg-gray-100">
+        <div className="relative h-52 overflow-hidden bg-gray-100">
           <img
             src={image}
             alt={title}
@@ -46,7 +46,7 @@ export const VehicleCard = ({
           </Badge>
         </div>
       </CardHeader>
-      <CardContent className="p-4">
+      <CardContent className="p-5">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
         <div className="space-y-2 text-sm text-muted-foreground">
           <div className="flex items-center">
@@ -63,7 +63,7 @@ export const VehicleCard = ({
           </div>
         </div>
       </CardContent>
-      <CardFooter className="p-4 pt-0 flex justify-between items-center">
+      <CardFooter className="p-5 pt-0 flex justify-between items-center">
         <div className="text-lg font-bold text-orange-600">
           ${price}
           <span className="text-sm font-normal text-muted-foreground">/day</span>
@@ -72,7 +72,7 @@ export const VehicleCard = ({
           <SheetTrigger asChild>
             <Button 
               variant="secondary"
-              className="bg-orange-100 hover:bg-orange-200 text-orange-700"
+              className="bg-orange-100 hover:bg-orange-200 text-orange-700 rounded-full"
             >
               View Details
             </Button>
@@ -82,7 +82,7 @@ export const VehicleCard = ({
               <SheetTitle className="text-2xl">{title}</SheetTitle>
             </SheetHeader>
             <div className="space-y-6">
-              <div className="aspect-video relative overflow-hidden rounded-lg">
+              <div className="aspect-video relative overflow-hidden rounded-xl">
                 <img
                   src={image}
                   alt={title}
@@ -91,7 +91,7 @@ export const VehicleCard = ({
               </div>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <Badge className="text-base px-3 py-1">{type}</Badge>
+                  <Badge className="text-base px-3 py-1 rounded-full">{type}</Badge>
                   <span className="text-2xl font-bold text-orange-600">
                     ${price}<span className="text-sm font-normal text-muted-foreground">/day</span>
                   </span>
@@ -117,6 +117,9 @@ export const VehicleCard = ({
                     full maintenance support and insurance options. Perfect for construction and industrial projects.
                   </p>
                 </div>
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                  Reserve Now
+                </Button>
               </div>
             </div>
           </SheetContent>
