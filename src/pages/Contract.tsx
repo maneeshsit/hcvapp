@@ -1,9 +1,9 @@
-
 import { Link } from "react-router-dom";
-import { FileText, Check, Download, Clipboard, Calendar } from "lucide-react";
+import { FileText, Check, Clipboard, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ContractDownload } from "@/components/ContractDownload";
 
 const Contract = () => {
   return (
@@ -81,10 +81,7 @@ const Contract = () => {
                 </div>
               </div>
               <div className="flex gap-4">
-                <Button className="flex gap-2">
-                  <Download className="h-5 w-5" />
-                  Download Sample
-                </Button>
+                <ContractDownload contractType="standard" />
                 <Button variant="outline" className="flex gap-2">
                   <Clipboard className="h-5 w-5" />
                   Request Copy
@@ -121,10 +118,7 @@ const Contract = () => {
                 </div>
               </div>
               <div className="flex gap-4">
-                <Button className="flex gap-2">
-                  <Download className="h-5 w-5" />
-                  Download Sample
-                </Button>
+                <ContractDownload contractType="longterm" />
                 <Button variant="outline" className="flex gap-2">
                   <Clipboard className="h-5 w-5" />
                   Request Copy
@@ -162,10 +156,11 @@ const Contract = () => {
                 </div>
               </div>
               <div className="flex gap-4">
-                <Button className="flex gap-2">
+                <Button className="flex gap-2" onClick={() => document.getElementById('consultation-modal')?.click()}>
                   <Calendar className="h-5 w-5" />
                   Schedule Consultation
                 </Button>
+                <ContractDownload contractType="corporate" buttonVariant="outline" />
               </div>
             </TabsContent>
           </Tabs>
