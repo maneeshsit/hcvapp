@@ -24,15 +24,24 @@ export const VehicleCard = ({
   image,
 }: VehicleCardProps) => {
   const isAvailableNow = availability === "Available Now";
+  
+  // Fix image path by ensuring it starts with the correct path
+  const imagePath = image.startsWith('/') ? image : `/${image}`;
 
   return (
     <Card className="overflow-hidden hover-card border-none shadow-lg rounded-xl">
       <CardHeader className="p-0">
         <div className="relative h-52 overflow-hidden bg-gray-100">
           <img
-            src={image}
+            src={imagePath}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+            onError={(e) => {
+              // Fallback image if the original image fails to load
+              const target = e.target as HTMLImageElement;
+              target.src = "/placeholder.svg";
+              target.onerror = null; // Prevent infinite error loop
+            }}
           />
           <Badge 
             className={cn(
@@ -84,9 +93,15 @@ export const VehicleCard = ({
             <div className="space-y-6">
               <div className="aspect-video relative overflow-hidden rounded-xl">
                 <img
-                  src={image}
+                  src={imagePath}
                   alt={title}
                   className="object-cover w-full h-full"
+                  onError={(e) => {
+                    // Fallback image if the original image fails to load
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/placeholder.svg";
+                    target.onerror = null; // Prevent infinite error loop
+                  }}
                 />
               </div>
               <div className="space-y-4">

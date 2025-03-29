@@ -30,7 +30,7 @@ const VEHICLES = [
     location: "Salt Lake City, UT",
     price: 299,
     availability: "Available Now",
-    image: "/OIP.png",
+    image: "/toyota.png", // Fixed image path
   },
   {
     id: 4,
