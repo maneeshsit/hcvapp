@@ -25,8 +25,8 @@ export const VehicleCard = ({
 }: VehicleCardProps) => {
   const isAvailableNow = availability === "Available Now";
   
-  // Fix image path by ensuring it starts with the correct path
-  const imagePath = image.startsWith('/') ? image : `/${image}`;
+  // Fix image path by checking if it's a URL or local path
+  const imagePath = image.startsWith('http') ? image : image.startsWith('/') ? image : `/${image}`;
 
   return (
     <Card className="overflow-hidden hover-card border-none shadow-lg rounded-xl">

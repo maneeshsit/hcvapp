@@ -66,7 +66,7 @@ const VEHICLES = [
     location: "Portland, OR",
     price: 849,
     availability: "Available Now",
-    image: "https://images.unsplash.com/photo-1487887235947-a955ef187fcc",
+    image: "https://images.unsplash.com/photo-1487887235947-a955ef187fcc?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 8,
@@ -75,7 +75,7 @@ const VEHICLES = [
     location: "Boise, ID",
     price: 1199,
     availability: "Next Week",
-    image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716",
+    image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 9,
@@ -84,7 +84,7 @@ const VEHICLES = [
     location: "Seattle, WA",
     price: 1599,
     availability: "Available Now",
-    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
+    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
   }
 ];
 
