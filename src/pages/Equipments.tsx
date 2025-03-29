@@ -28,7 +28,7 @@ const VEHICLES = [
     location: "Salt Lake City, UT",
     price: 299,
     availability: "Available Now",
-    image: "/OIP.png",
+    image: "/toyota.png",
   },
   {
     id: 4,
@@ -56,6 +56,33 @@ const VEHICLES = [
     price: 199,
     availability: "Available Now",
     image: "/bandsaw.png",
+  },
+  {
+    id: 7,
+    title: "Komatsu PC210 Excavator",
+    type: "Excavator",
+    location: "Portland, OR",
+    price: 849,
+    availability: "Available Now",
+    image: "https://images.unsplash.com/photo-1487887235947-a955ef187fcc",
+  },
+  {
+    id: 8,
+    title: "Volvo A45G Articulated Hauler",
+    type: "Hauler",
+    location: "Boise, ID",
+    price: 1199,
+    availability: "Next Week",
+    image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716",
+  },
+  {
+    id: 9,
+    title: "Liebherr LTM 1300 Crane",
+    type: "Crane",
+    location: "Seattle, WA",
+    price: 1599,
+    availability: "Available Now",
+    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
   }
 ];
 
