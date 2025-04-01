@@ -1,5 +1,5 @@
 
-import { Calendar, MapPin, AlertCircle, X } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
@@ -25,41 +25,32 @@ export const VehicleCard = ({
 }: VehicleCardProps) => {
   const isAvailableNow = availability === "Available Now";
   
-  // Use placeholder images for missing equipment images
-  const getImagePath = () => {
-    if (image.startsWith('http')) return image;
-    
-    // Use placeholder images for equipment that doesn't have images
-    const placeholderMap: {[key: string]: string} = {
-      "Bulldozer": "https://images.unsplash.com/photo-1487252665478-49b61b47f302",
-      "Backhoe": "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-      "Forklift": "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151",
-      "Generator": "https://images.unsplash.com/photo-1500673922987-e212871fec22",
-      "Drill Rig": "https://images.unsplash.com/photo-1487252665478-49b61b47f302",
-      "Bandsaw": "https://images.unsplash.com/photo-1500673922987-e212871fec22",
-      "Excavator": "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-      "Hauler": "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151",
-      "Crane": "https://images.unsplash.com/photo-1500673922987-e212871fec22"
-    };
-    
-    return placeholderMap[type] || "/placeholder.svg";
+  // Default fallback image mapping if image loading fails
+  const fallbackImageMap: {[key: string]: string} = {
+    "Bulldozer": "/cat1.png",
+    "Backhoe": "/jcb1.png",
+    "Forklift": "/toyota.png",
+    "Generator": "/atlascopco.png",
+    "Drill Rig": "/sandvik.png",
+    "Bandsaw": "/bandsaw.png",
+    "Excavator": "/komatsu.png",
+    "Hauler": "/volvo.png",
+    "Crane": "/liebherrcrane.png"
   };
-
-  const imagePath = getImagePath();
 
   return (
     <Card className="overflow-hidden hover-card border-none shadow-lg rounded-xl">
       <CardHeader className="p-0">
         <div className="relative h-52 overflow-hidden bg-gray-100">
           <img
-            src={imagePath}
+            src={image}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
             onError={(e) => {
               // Fallback image if the original image fails to load
               const target = e.target as HTMLImageElement;
-              target.src = "/placeholder.svg";
-              console.error(`Failed to load image: ${imagePath}`);
+              target.src = fallbackImageMap[type] || "/placeholder.svg";
+              console.error(`Failed to load image: ${image}, falling back to ${fallbackImageMap[type] || "/placeholder.svg"}`);
               target.onerror = null; // Prevent infinite error loop
             }}
           />
@@ -113,14 +104,14 @@ export const VehicleCard = ({
             <div className="space-y-6">
               <div className="aspect-video relative overflow-hidden rounded-xl">
                 <img
-                  src={imagePath}
+                  src={image}
                   alt={title}
                   className="object-cover w-full h-full"
                   onError={(e) => {
                     // Fallback image if the original image fails to load
                     const target = e.target as HTMLImageElement;
-                    target.src = "/placeholder.svg";
-                    console.error(`Failed to load detail image: ${imagePath}`);
+                    target.src = fallbackImageMap[type] || "/placeholder.svg";
+                    console.error(`Failed to load detail image: ${image}, falling back to ${fallbackImageMap[type] || "/placeholder.svg"}`);
                     target.onerror = null; // Prevent infinite error loop
                   }}
                 />

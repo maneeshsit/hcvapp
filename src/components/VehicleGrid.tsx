@@ -1,6 +1,5 @@
 
 import { VehicleCard } from "./VehicleCard";
-import { Construction, Hammer, Forklift, Zap, Drill } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -12,7 +11,7 @@ const VEHICLES = [
     location: "Denver, CO",
     price: 899,
     availability: "Available Now",
-    image: "https://images.unsplash.com/photo-1487252665478-49b61b47f302",
+    image: "/cat1.png",
   },
   {
     id: 2,
@@ -21,7 +20,7 @@ const VEHICLES = [
     location: "Phoenix, AZ",
     price: 699,
     availability: "Next Week",
-    image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
+    image: "/jcb1.png",
   },
   {
     id: 3,
@@ -30,7 +29,7 @@ const VEHICLES = [
     location: "Salt Lake City, UT",
     price: 299,
     availability: "Available Now",
-    image: "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151",
+    image: "/toyota.png",
   },
   {
     id: 4,
@@ -39,7 +38,7 @@ const VEHICLES = [
     location: "Reno, NV",
     price: 449,
     availability: "Tomorrow",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
+    image: "/atlascopco.png",
   },
   {
     id: 5,
@@ -48,7 +47,7 @@ const VEHICLES = [
     location: "Tuscon, AZ",
     price: 1299,
     availability: "Next Week",
-    image: "https://images.unsplash.com/photo-1487252665478-49b61b47f302",
+    image: "/sandvik.png",
   },
   {
     id: 6,
@@ -57,7 +56,7 @@ const VEHICLES = [
     location: "Las Vegas, NV",
     price: 199,
     availability: "Available Now",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
+    image: "/bandsaw.png",
   },
   {
     id: 7,
@@ -66,7 +65,7 @@ const VEHICLES = [
     location: "Portland, OR",
     price: 849,
     availability: "Available Now",
-    image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
+    image: "/komatsu.png",
   },
   {
     id: 8,
@@ -75,7 +74,7 @@ const VEHICLES = [
     location: "Boise, ID",
     price: 1199,
     availability: "Next Week",
-    image: "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151",
+    image: "/volvo.png",
   },
   {
     id: 9,
@@ -84,7 +83,7 @@ const VEHICLES = [
     location: "Seattle, WA",
     price: 1599,
     availability: "Available Now",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
+    image: "/liebherrcrane.png",
   }
 ];
 
