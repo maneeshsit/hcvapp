@@ -25,8 +25,8 @@ export const VehicleCard = ({
 }: VehicleCardProps) => {
   const isAvailableNow = availability === "Available Now";
   
-  // Fix image path by checking if it's a URL or local path
-  const imagePath = image.startsWith('http') ? image : image.startsWith('/') ? image : `/${image}`;
+  // Fix image path by removing leading slash for relative paths
+  const imagePath = image.startsWith('http') ? image : image;
 
   return (
     <Card className="overflow-hidden hover-card border-none shadow-lg rounded-xl">
@@ -40,6 +40,7 @@ export const VehicleCard = ({
               // Fallback image if the original image fails to load
               const target = e.target as HTMLImageElement;
               target.src = "/placeholder.svg";
+              console.error(`Failed to load image: ${imagePath}`);
               target.onerror = null; // Prevent infinite error loop
             }}
           />
@@ -100,6 +101,7 @@ export const VehicleCard = ({
                     // Fallback image if the original image fails to load
                     const target = e.target as HTMLImageElement;
                     target.src = "/placeholder.svg";
+                    console.error(`Failed to load detail image: ${imagePath}`);
                     target.onerror = null; // Prevent infinite error loop
                   }}
                 />
