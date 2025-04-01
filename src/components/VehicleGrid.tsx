@@ -12,7 +12,7 @@ const VEHICLES = [
     location: "Denver, CO",
     price: 899,
     availability: "Available Now",
-    image: "/cat1.png",
+    image: "https://images.unsplash.com/photo-1487252665478-49b61b47f302",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const VEHICLES = [
     location: "Phoenix, AZ",
     price: 699,
     availability: "Next Week",
-    image: "/jcb1.png",
+    image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const VEHICLES = [
     location: "Salt Lake City, UT",
     price: 299,
     availability: "Available Now",
-    image: "/toyota.png",
+    image: "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151",
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const VEHICLES = [
     location: "Reno, NV",
     price: 449,
     availability: "Tomorrow",
-    image: "/atlascopco.png",
+    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
   },
   {
     id: 5,
@@ -48,7 +48,7 @@ const VEHICLES = [
     location: "Tuscon, AZ",
     price: 1299,
     availability: "Next Week",
-    image: "/sandvik.png",
+    image: "https://images.unsplash.com/photo-1487252665478-49b61b47f302",
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ const VEHICLES = [
     location: "Las Vegas, NV",
     price: 199,
     availability: "Available Now",
-    image: "/bandsaw.png",
+    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
   },
   {
     id: 7,
@@ -66,7 +66,7 @@ const VEHICLES = [
     location: "Portland, OR",
     price: 849,
     availability: "Available Now",
-    image: "/komatsu.png",
+    image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
   },
   {
     id: 8,
@@ -75,7 +75,7 @@ const VEHICLES = [
     location: "Boise, ID",
     price: 1199,
     availability: "Next Week",
-    image: "/volvo.png",
+    image: "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151",
   },
   {
     id: 9,
@@ -84,7 +84,7 @@ const VEHICLES = [
     location: "Seattle, WA",
     price: 1599,
     availability: "Available Now",
-    image: "/liebherrcrane.png",
+    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
   }
 ];
 

@@ -25,8 +25,27 @@ export const VehicleCard = ({
 }: VehicleCardProps) => {
   const isAvailableNow = availability === "Available Now";
   
-  // Fix image path by removing leading slash for relative paths
-  const imagePath = image.startsWith('http') ? image : image;
+  // Use placeholder images for missing equipment images
+  const getImagePath = () => {
+    if (image.startsWith('http')) return image;
+    
+    // Use placeholder images for equipment that doesn't have images
+    const placeholderMap: {[key: string]: string} = {
+      "Bulldozer": "https://images.unsplash.com/photo-1487252665478-49b61b47f302",
+      "Backhoe": "https://images.unsplash.com/photo-1472396961693-142e6e269027",
+      "Forklift": "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151",
+      "Generator": "https://images.unsplash.com/photo-1500673922987-e212871fec22",
+      "Drill Rig": "https://images.unsplash.com/photo-1487252665478-49b61b47f302",
+      "Bandsaw": "https://images.unsplash.com/photo-1500673922987-e212871fec22",
+      "Excavator": "https://images.unsplash.com/photo-1472396961693-142e6e269027",
+      "Hauler": "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151",
+      "Crane": "https://images.unsplash.com/photo-1500673922987-e212871fec22"
+    };
+    
+    return placeholderMap[type] || "/placeholder.svg";
+  };
+
+  const imagePath = getImagePath();
 
   return (
     <Card className="overflow-hidden hover-card border-none shadow-lg rounded-xl">
