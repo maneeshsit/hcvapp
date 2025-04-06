@@ -10,19 +10,9 @@ const Index = () => {
     location: ""
   });
 
-  const handleSearch = (searchTerm: string, location: string) => {
-    setSearchParams({ searchTerm, location });
-    
-    // Scroll to vehicle grid section
-    const vehicleGridElement = document.getElementById('vehicle-grid');
-    if (vehicleGridElement) {
-      vehicleGridElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="min-h-screen">
-      <Hero onSearch={handleSearch} />
+      <Hero />
       <Categories />
       <div id="vehicle-grid">
         <VehicleGrid 
