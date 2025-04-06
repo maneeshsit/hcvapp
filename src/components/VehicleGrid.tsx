@@ -107,8 +107,8 @@ interface VehicleGridProps {
 
 export const VehicleGrid = ({ initialSearchTerm = "", initialLocation = "" }: VehicleGridProps) => {
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
-  const [selectedType, setSelectedType] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState(initialLocation);
+  const [selectedType, setSelectedType] = useState("all_types");
+  const [selectedLocation, setSelectedLocation] = useState(initialLocation || "all_locations");
   const [selectedAvailability, setSelectedAvailability] = useState("All");
   const [priceRange, setPriceRange] = useState({ min: "", max: "" });
   const [showFilters, setShowFilters] = useState(false);
@@ -117,8 +117,10 @@ export const VehicleGrid = ({ initialSearchTerm = "", initialLocation = "" }: Ve
     if (initialSearchTerm !== searchTerm) {
       setSearchTerm(initialSearchTerm);
     }
-    if (initialLocation !== selectedLocation) {
+    if (initialLocation !== selectedLocation && initialLocation) {
       setSelectedLocation(initialLocation);
+    } else if (initialLocation === "" && selectedLocation !== "all_locations") {
+      setSelectedLocation("all_locations");
     }
     if (initialSearchTerm || initialLocation) {
       setShowFilters(true);
@@ -129,8 +131,8 @@ export const VehicleGrid = ({ initialSearchTerm = "", initialLocation = "" }: Ve
     const matchesSearch = vehicle.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           vehicle.type.toLowerCase().includes(searchTerm.toLowerCase());
     
-    const matchesType = selectedType === "" || vehicle.type === selectedType;
-    const matchesLocation = selectedLocation === "" || vehicle.location.includes(selectedLocation);
+    const matchesType = selectedType === "all_types" || vehicle.type === selectedType;
+    const matchesLocation = selectedLocation === "all_locations" || vehicle.location.includes(selectedLocation);
     const matchesAvailability = selectedAvailability === "All" || vehicle.availability === selectedAvailability;
     
     const matchesPrice = (priceRange.min === "" || vehicle.price >= Number(priceRange.min)) &&
@@ -204,7 +206,7 @@ export const VehicleGrid = ({ initialSearchTerm = "", initialLocation = "" }: Ve
                     <SelectValue placeholder="All Equipment Types" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Equipment Types</SelectItem>
+                    <SelectItem value="all_types">All Equipment Types</SelectItem>
                     {uniqueTypes.map(type => (
                       <SelectItem key={type} value={type}>{type}</SelectItem>
                     ))}
@@ -219,7 +221,7 @@ export const VehicleGrid = ({ initialSearchTerm = "", initialLocation = "" }: Ve
                     <SelectValue placeholder="All Locations" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Locations</SelectItem>
+                    <SelectItem value="all_locations">All Locations</SelectItem>
                     {uniqueLocations.map(location => (
                       <SelectItem key={location} value={location}>{location}</SelectItem>
                     ))}
