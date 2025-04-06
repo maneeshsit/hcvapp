@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { VehicleCard } from "./VehicleCard";
 import { Link } from "react-router-dom";
@@ -89,6 +90,15 @@ const VEHICLES = [
     image: "/liebherrcrane.png",
   }
 ];
+
+// Extract unique equipment types
+const uniqueTypes = [...new Set(VEHICLES.map(vehicle => vehicle.type))];
+
+// Extract unique locations
+const uniqueLocations = [...new Set(VEHICLES.map(vehicle => vehicle.location))];
+
+// Availability options
+const availabilityOptions = ["All", "Available Now", "Tomorrow", "Next Week"];
 
 interface VehicleGridProps {
   initialSearchTerm?: string;
