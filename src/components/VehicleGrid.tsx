@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { VehicleCard } from "./VehicleCard";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -91,26 +90,37 @@ const VEHICLES = [
   }
 ];
 
-// Extract unique types and locations for filter options
-const uniqueTypes = [...new Set(VEHICLES.map(vehicle => vehicle.type))];
-const uniqueLocations = [...new Set(VEHICLES.map(vehicle => vehicle.location))];
-const availabilityOptions = ["All", "Available Now", "Tomorrow", "Next Week"];
+interface VehicleGridProps {
+  initialSearchTerm?: string;
+  initialLocation?: string;
+}
 
-export const VehicleGrid = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+export const VehicleGrid = ({ initialSearchTerm = "", initialLocation = "" }: VehicleGridProps) => {
+  const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
   const [selectedType, setSelectedType] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState(initialLocation);
   const [selectedAvailability, setSelectedAvailability] = useState("All");
   const [priceRange, setPriceRange] = useState({ min: "", max: "" });
   const [showFilters, setShowFilters] = useState(false);
 
-  // Filter vehicles based on search criteria
+  useEffect(() => {
+    if (initialSearchTerm !== searchTerm) {
+      setSearchTerm(initialSearchTerm);
+    }
+    if (initialLocation !== selectedLocation) {
+      setSelectedLocation(initialLocation);
+    }
+    if (initialSearchTerm || initialLocation) {
+      setShowFilters(true);
+    }
+  }, [initialSearchTerm, initialLocation]);
+
   const filteredVehicles = VEHICLES.filter(vehicle => {
     const matchesSearch = vehicle.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           vehicle.type.toLowerCase().includes(searchTerm.toLowerCase());
     
     const matchesType = selectedType === "" || vehicle.type === selectedType;
-    const matchesLocation = selectedLocation === "" || vehicle.location === selectedLocation;
+    const matchesLocation = selectedLocation === "" || vehicle.location.includes(selectedLocation);
     const matchesAvailability = selectedAvailability === "All" || vehicle.availability === selectedAvailability;
     
     const matchesPrice = (priceRange.min === "" || vehicle.price >= Number(priceRange.min)) &&
@@ -155,7 +165,6 @@ export const VehicleGrid = () => {
           </p>
         </div>
 
-        {/* Search and Filter Section */}
         <div className="bg-white p-5 rounded-xl shadow-md mb-8">
           <div className="flex flex-col md:flex-row gap-4 items-center mb-4">
             <div className="relative flex-grow">

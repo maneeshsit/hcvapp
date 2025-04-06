@@ -2,8 +2,27 @@
 import { Search, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export const Hero = () => {
+interface HeroProps {
+  onSearch?: (searchTerm: string, location: string) => void;
+}
+
+export const Hero = ({ onSearch }: HeroProps) => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [location, setLocation] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    if (onSearch) {
+      onSearch(searchTerm, location);
+    } else {
+      // If no onSearch prop provided, navigate to equipments with search params
+      navigate(`/equipments?search=${encodeURIComponent(searchTerm)}&location=${encodeURIComponent(location)}`);
+    }
+  };
+
   return (
     <div className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -33,16 +52,23 @@ export const Hero = () => {
                 <Input 
                   placeholder="Location" 
                   className="pl-10 h-12 rounded-lg"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
                 />
               </div>
               <div className="relative">
-                <Calendar className="absolute left-3 top-3 h-5 w-5 text-gray-500" />
+                <Search className="absolute left-3 top-3 h-5 w-5 text-gray-500" />
                 <Input 
-                  type="date" 
-                  className="pl-10 h-12 rounded-lg" 
+                  placeholder="Search equipment..."
+                  className="pl-10 h-12 rounded-lg"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                 />
               </div>
-              <Button className="w-full h-12 bg-orange-500 hover:bg-orange-600 text-white rounded-lg transition-colors duration-300">
+              <Button 
+                className="w-full h-12 bg-orange-500 hover:bg-orange-600 text-white rounded-lg transition-colors duration-300"
+                onClick={handleSearch}
+              >
                 <Search className="mr-2 h-5 w-5" />
                 Search Equipment
               </Button>
